@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Инфо</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Add info</h1>
+    <form action="/info/add" method="post">
+        <input type="text" name="title" placeholder="Insert title" class="form-control"><br>
+        <input type="text" name="anonce" placeholder="Insert anonce" class="form-control"><br>
+        <textarea type="text" name="full_text" placeholder="Insert info" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+</html>

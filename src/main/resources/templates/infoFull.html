@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Инфо</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <div th:each="el : ${post}" class="alert alert-info mt-2">
+        <h1 th:text="${el.title}"/>
+        <p th:text="${el.full_text}"/>
+        <p><b>Views:</b> <span th:text="${el.views}"/><p/>
+        <a th:href="'/info/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a>
+        <form th:action="'/info/' + ${el.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Remove</button>
+        </form>
+
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+
+</body>
+</html>

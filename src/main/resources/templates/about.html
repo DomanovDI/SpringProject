@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<header th:insert="blocks/header :: header"></header>
+<div class="container" mt-5>
+    <h1 th:text="${title}"/>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+</html>
